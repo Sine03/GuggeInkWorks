@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-800 text-white">
+    <footer className=" bg-stone-900 text-white">
       <div className="container mx-auto py-6">
         <div className="flex flex-wrap justify-between items-center">
           <div className="w-full md:w-1/3 mb-4 md:mb-0">
@@ -16,7 +16,7 @@ const Footer = () => {
             <p>City, Country</p>
           </div>
           <div className="w-full md:w-1/3">
-            <h2 className="text-xl font-semibold">Follow Us</h2>
+            <h2 className="text-xl font-semibold  ">Follow Us</h2>
             <p>Social Media Links</p>
           </div>
         </div>

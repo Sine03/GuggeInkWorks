@@ -1,36 +1,23 @@
-import Link from "next/link";
 import React from "react";
+import ScrollButton from "./ScrollButton";
 
 const Navbar = () => {
   return (
-    <nav className="bg-blue-800 p-4">
+    <nav className="bg-black p-4 fixed top-0 left-0 w-full z-10">
       <div className="container mx-auto flex items-center justify-between">
-        <div className="text-white font-bold text-xl">Doktorfot</div>
+        <div className="text-white font-bold text-xl">Gugge Inkworks</div>
         <ul className="flex space-x-4">
           <li>
-            <a href="#" className="text-white hover:underline">
-              HEM
-            </a>
+            <ScrollButton targetId="home" label="Hem" />
           </li>
           <li>
-            <a href="//tjanster" className="text-white hover:underline">
-              TJÄNSTER & PRISER
-            </a>
+            <ScrollButton targetId="kontakt" label="Kontakt" />
           </li>
           <li>
-            <a href="#" className="text-white hover:underline">
-              ORTOPEDISK INLÄGG
-            </a>
+            <ScrollButton targetId="portfolio" label="Portfolio" />
           </li>
           <li>
-            <Link href="/Wowb">
-              <p className="text-white hover:underline">KONTAKTER</p>
-            </Link>
-          </li>
-          <li>
-            <a href="#" className="text-white hover:underline">
-              BOKA TID
-            </a>
+            <ScrollButton targetId="plats" label="Plats" />
           </li>
         </ul>
       </div>
