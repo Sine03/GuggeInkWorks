@@ -67,7 +67,7 @@ const Home = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-white text-base md:text-xl">
             <div className="flex mb-2 md:mb-4 justify-center">
-              <span className="font-bold text-2xl md:text-4xl">
+              <span className="font-bold  text-3xl md:text-4xl">
                 Blod, svett och bläck
               </span>
             </div>
@@ -76,59 +76,69 @@ const Home = () => {
             rörelse där individer väljer hemmagjorda tatueringar för att bryta
             normer och vill använda sin kropp som canvas. Välkommen till en
             subkultur där tatueringar blir konstverk och uttryck aldrig bleknar.
-            <p className="text-white mt-2 md:mt-4 text-base md:text-lg">
-              Tel: 0706-35 3434
-            </p>
-            <p className="text-white mt-2 md:mt-4 text-base md:text-lg">
-              Instagram @guggeinkworks
+            <p className="my-6">
+              <a
+                href="https://www.instagram.com/guggeInkworks/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {" "}
+                Kontakt:
+                <span className="text-blue-500 flex justify-center text-2xl">
+                  @guggeinkworks
+                </span>
+              </a>
             </p>
           </div>
         </div>
       </div>
-
-      <div className="bg-black p-4 md:p-8 text-center min-h-screen flex flex-col justify-center items-center overflow-y-auto">
-        <div className="container mx-auto">
-          <div className="text-white text-base md:text-xl">
-            <div className="flex mb-4 justify-center">
-              <span className="font-bold text-3xl md:text-4xl">Portfolio</span>
+      <div id="portfolio">
+        <div className="bg-black p-4 md:p-8 text-center min-h-screen flex flex-col justify-center items-center overflow-y-auto">
+          <div className="container mx-auto">
+            <div className="text-white text-base md:text-xl">
+              <div className="flex mb-4 justify-center">
+                <span className="font-bold text-3xl md:text-4xl">
+                  Portfolio
+                </span>
+              </div>
+              {/* Start of Portfolio Items */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {Array.from({ length: 9 }, (_, index) => (
+                  <div
+                    key={index}
+                    className="bg-black p-2 md:p-4 rounded-lg shadow-md cursor-pointer"
+                    onClick={() => handleImageClick(index)}
+                  >
+                    <Image
+                      src={`/${index + 1}.webp`}
+                      alt={`Portfolio Item ${index + 1}`}
+                      width={600}
+                      height={400}
+                      layout="responsive"
+                    />
+                  </div>
+                ))}
+              </div>
+              {/* End of Portfolio Items */}
             </div>
-            {/* Start of Portfolio Items */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {Array.from({ length: 9 }, (_, index) => (
-                <div
-                  key={index}
-                  className="bg-black p-2 md:p-4 rounded-lg shadow-md cursor-pointer"
-                  onClick={() => handleImageClick(index)}
-                >
-                  <Image
-                    src={`/${index + 1}.webp`}
-                    alt={`Portfolio Item ${index + 1}`}
-                    width={600}
-                    height={400}
-                    layout="responsive"
-                  />
-                </div>
-              ))}
-            </div>
-            {/* End of Portfolio Items */}
           </div>
+          {selectedImage && (
+            <div
+              className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-80"
+              onClick={handleCloseImage}
+            >
+              <div className="bg-black bg-opacity-90 p-4 rounded-lg shadow-md">
+                <Image
+                  src={`/${selectedImage}`}
+                  alt="Selected Portfolio Item"
+                  width={800}
+                  height={600}
+                  layout="responsive"
+                />
+              </div>
+            </div>
+          )}
         </div>
-        {selectedImage && (
-          <div
-            className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-80"
-            onClick={handleCloseImage}
-          >
-            <div className="bg-black bg-opacity-90 p-4 rounded-lg shadow-md">
-              <Image
-                src={`/${selectedImage}`}
-                alt="Selected Portfolio Item"
-                width={800}
-                height={600}
-                layout="responsive"
-              />
-            </div>
-          </div>
-        )}
       </div>
 
       <div
@@ -137,7 +147,7 @@ const Home = () => {
       >
         <div className="max-w-4xl mx-auto">
           <div className="text-white text-base md:text-lg">
-            <span className="font-bold text-lg md:text-2xl">
+            <span className="font-bold text-3xl md:text-4xl">
               Du hittar oss här!
             </span>
             <br />
@@ -154,8 +164,8 @@ const Home = () => {
             </div>
           </div>
           <p className="text-white mt-2 md:mt-4 text-base md:text-lg">
-            Ni hittar mig i centrala Lund, hör av er via telefon eller på
-            Instagram för exakt plats. Välkommen!
+            Ni hittar mig i centrala Lund, hör av er via Instagram för exakt
+            plats. Välkommen!
           </p>
         </div>
       </div>
