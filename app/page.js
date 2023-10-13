@@ -40,6 +40,7 @@ const Home = () => {
           autoPlay
           playsInline
           loop
+          playsinline
           muted
           className="w-full h-full object-cover"
           src="/test.mp4"
