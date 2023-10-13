@@ -36,7 +36,9 @@ const Home = () => {
     <div>
       <div id="home" className="relative h-screen">
         <video
+          preload="yes"
           autoPlay
+          playsInline
           loop
           muted
           className="w-full h-full object-cover"
